@@ -2,14 +2,34 @@
 
 DevOps Flight Deck is an educational project for Git, GitHub, Docker, and CI/CD workflows.
 
-## Overview
+## Goal
 
-This project demonstrates:
-- Branching and pull requests
+This project turns DevOps concepts into a simple visual dashboard that helps learners understand:
+
+- Git branching strategies
+- Pull requests and code review
 - Merge conflict resolution
-- Docker basics
-- CI checks with GitHub Actions
-- Deployment pipeline concepts
+- Docker and container basics
+- GitHub Actions CI pipeline
+- Deployment workflow concepts
+
+## Project structure
+
+```text
+.
+├── .github/
+│   └── workflows/
+│       └── ci.yml
+├── index.html
+├── style.css
+├── script.js
+├── server.py
+├── Dockerfile
+├── docker-compose.yml
+├── README.md
+├── .gitignore
+└── .gitignore
+```
 
 ## Run locally
 
@@ -17,15 +37,32 @@ This project demonstrates:
 python3 -m http.server 8000
 ```
 
-Then open http://localhost:8000.
+Then open:
 
-## Docker
-
-```bash
-docker build -t devops-flight-deck .
-docker run -p 8000:8000 devops-flight-deck
+```text
+http://localhost:8000
 ```
 
-## GitHub Actions
+## Run via Docker
 
-The workflow runs on every push and pull request to validate the project.
+```bash
+docker compose up --build
+```
+
+Then open:
+
+```text
+http://localhost:8000
+```
+
+## GitHub Actions CI
+
+The workflow validates the Python app on every push and pull request.
+
+## Learning outcomes
+
+- Understand how branches protect the main codebase
+- Learn how pull requests improve review quality
+- Handle merge conflicts without losing work
+- Use Docker to standardize environments
+- See how CI/CD automates validation and deployment
