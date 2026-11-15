@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DevOps Flight Deck</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="topbar">
+        <div class="brand">
+          <span class="brand-icon">⚙</span>
+          <span>DevOps Flight Deck</span>
+        </div>
+        <button class="ghost-btn">Mission status: ready</button>
+      </header>
+
+      <main class="hero">
+        <section class="hero-copy">
+          <p class="eyebrow">Git + Docker + CI/CD</p>
+          <h1>Ship code with control.</h1>
+          <p class="subtext">
+            Learn the workflows that help modern engineering teams work safely: branching,
+            code review, merge conflict handling, containerization, and automated delivery.
+          </p>
+
+          <div class="cta-row">
+            <button id="workflowBtn" class="primary-btn">View workflow</button>
+            <button class="secondary-btn">Review pipeline</button>
+          </div>
+        </section>
+
+        <section class="intro-panel">
+          <div class="mission-box">
+            <span class="chip">Current mission</span>
+            <h2 id="missionTitle">Branching strategy</h2>
+            <p id="missionText">
+              Keep <strong>main</strong> stable, separate feature work in branches, and merge through reviewed pull requests.
+            </p>
+          </div>
+        </section>
+      </main>
+
+      <section class="overview-grid">
+        <article class="info-card active">
+          <span class="card-number">01</span>
+          <h3>Branching</h3>
+          <p>Use feature, release, and hotfix branches to keep production stable while development continues.</p>
+        </article>
+
+        <article class="info-card">
+          <span class="card-number">02</span>
+          <h3>Pull Requests</h3>
+          <p>Review changes, discuss intent, and ensure tests pass before merging into the protected branch.</p>
+        </article>
+
+        <article class="info-card">
+          <span class="card-number">03</span>
+          <h3>Conflicts</h3>
+          <p>Resolve overlapping edits by comparing differences and preserving both business intent and correctness.</p>
+        </article>
+
+        <article class="info-card">
+          <span class="card-number">04</span>
+          <h3>Docker</h3>
+          <p>Package apps in containers so they run consistently across development, CI, and production environments.</p>
+        </article>
+      </section>
+
+      <section class="lesson-grid">
+        <article class="lesson-panel">
+          <div class="panel-header">
+            <h3>Git workflow</h3>
+            <span class="tag">Version control</span>
+          </div>
+          <ul>
+            <li>Create a feature branch from <code>main</code></li>
+            <li>Commit focused changes with clear messages</li>
+            <li>Open a pull request for review</li>
+            <li>Resolve conflicts before merge</li>
+            <li>Deploy the validated branch</li>
+          </ul>
+        </article>
+
+        <article class="lesson-panel">
+          <div class="panel-header">
+            <h3>Docker basics</h3>
+            <span class="tag accent">Containers</span>
+          </div>
+          <ul>
+            <li><code>Dockerfile</code> defines the app environment</li>
+            <li><code>docker build</code> creates an image</li>
+            <li><code>docker run</code> starts a container</li>
+            <li>Use <code>docker-compose</code> for multi-service setups</li>
+          </ul>
+        </article>
+
+        <article class="lesson-panel wide">
+          <div class="panel-header">
+            <h3>CI/CD pipeline</h3>
+            <span class="tag success">Automation</span>
+          </div>
+          <div class="pipeline-steps">
+            <div class="step">1. Code pushed</div>
+            <div class="step">2. CI checks run</div>
+            <div class="step">3. Tests validate build</div>
+            <div class="step">4. Deploy to target</div>
+          </div>
+        </article>
+      </section>
+
+      <section class="terminal-panel">
+        <div class="panel-header">
+          <h3>Useful command set</h3>
+          <button class="mini-btn">Copy</button>
+        </div>
+        <pre><code>git checkout -b feature/login
+
+git add .
+git commit -m "Add login flow"
+
+git push origin feature/login
+
+git checkout main
+git pull origin main
+
+docker build -t devops-flight-deck .
+docker run -p 8000:8000 devops-flight-deck
+</code></pre>
+      </section>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
